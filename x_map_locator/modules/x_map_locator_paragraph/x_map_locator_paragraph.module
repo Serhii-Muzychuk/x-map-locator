@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Contains x_map_locator_paragraph.module.
+ */
+
+/**
+ * @TechDoc("Implementation hook_preprocess_paragraph(). Adding paragraph specific classes and settings.")
+ *
+ * @param $variables
+ */
+function x_map_locator_paragraph_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $type = $paragraph->bundle();
+  if ($type == 'map_locator') {
+    $variables['attributes']['class'][] = 'map-locator-paragraph';
+    $block_manager = \Drupal::service('plugin.manager.block');
+    $block = $block_manager->createInstance('x_map_locator_search_block');
+    $variables['content']['block'] = $block->build();
+    $variables['content']['block']['#weight'] = 100;
+  }
+}

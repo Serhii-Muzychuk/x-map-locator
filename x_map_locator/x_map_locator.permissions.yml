@@ -1,0 +1,15 @@
+'access x map locator':
+  title: 'Access X Map Locator'
+'administer x map locator':
+  title: 'Administer X Map Locator'
+  restrict access: TRUE
+'add x_map_locator_doctor entity':
+  title: 'Add Doctor entity'
+'view x_map_locator_doctor entity':
+  title: 'View Doctor entity'
+'edit x_map_locator_doctor entity':
+  title: 'Edit Doctor entity'
+'delete x_map_locator_doctor entity':
+  title: 'Delete Doctor entity'
+'import x_map_locator_doctor':
+  title: 'Import Doctor'

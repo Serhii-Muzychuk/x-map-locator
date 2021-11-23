@@ -1,0 +1,18 @@
+x_map_locator.locator_setting:
+  title: 'X Map Locator Configuration'
+  route_name: x_map_locator.admin_structure
+  description: 'X Map Locator configuration'
+  parent: x_settings.settings_list
+
+x_map_locator.fields_management:
+  title: 'X Map Locator Settings'
+  route_name: x_map_locator.setting
+  description: 'X Map Locator Settings'
+  parent: x_map_locator.locator_setting
+
+entity.x_map_locator_doctor.collection:
+  title: 'X Map Locator: Doctors Listing'
+  route_name: view.doctors_list.page_1
+  description: 'List Doctor'
+  parent: x_map_locator.locator_setting
+  weight: 10

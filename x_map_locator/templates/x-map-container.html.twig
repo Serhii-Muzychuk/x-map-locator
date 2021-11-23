@@ -1,0 +1,95 @@
+<div class="map-wrapper" id="{{ map_container.wrapper_id }}">
+  <div class="map-wrapper--message"></div>
+  <div class="map-wrapper--floating-panel floating-panel">
+    <div class="floating-panel--container">
+      <div class="floating-panel--container--search-form">
+        {{ map_container.form }}
+      </div>
+      <div class="floating-panel--container--actions mobile-actions">
+        <div class="mobile-actions--action-button hide-position"></div>
+        <div class="mobile-actions--action-text layout-to-show hidden-block">
+          {{ 'Hide search'|t }}
+        </div>
+        <div class="mobile-actions--action-text layout-to-hide">
+          {{ 'Show search'|t }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="map-wrapper--advanced-form">
+    {{ map_container.advance_form }}
+  </div>
+  <div class="map-wrapper--map-result map-result hidden-block">
+    <div class="map-result--mobile-toggle mobile-toggle">
+      <div class="mobile-toggle--form">
+        <div class="mobile-toggle--form--search-form"></div>
+      </div>
+      <div class="mobile-toggle--list"></div>
+    </div>
+    <div class="map-result--links links">
+      <div class="links--show-link toggle-link">
+        <span class="links--show-link--link-icon"></span>
+        <span class="links--show-link--link-text">{{ 'Show map'|t }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="map-wrapper--scheduled-appointment scheduled-appointment hidden">
+    <div class="scheduled-appointment--form">
+      <div class="scheduled-appointment--form--form-header form-header">
+        <div class="form-header--form-title">
+          <p>{{ 'Schedule Appointment'|t }}</p>
+        </div>
+        <div class="form-header--desc-text">
+          <p>{{ 'Please provide your contact information below to schedule an appointment with: '|t -}}<span class="practice-name"></span></p>
+        </div>
+        <div class="form-header--close-form"></div>
+      </div>
+      {{ map_container.scheduled_appointment|render }}
+    </div>
+  </div>
+  <div id="{{ map_container.block_id }}" class="map-wrapper--map map">
+    <div class="map--container"></div>
+    <div class="map--preloader-map"></div>
+  </div>
+  {% if map_container.markers is not empty and map_container.hints_hide == 0 %}
+    <div class="map-wrapper--hints-layout hints-layout">
+      <div class="hints-layout--hints-list">
+        <div class="hints-layout--hints-list--action action">
+          <div class="action--description">
+            <div class="action--description--button hide-position"></div>
+            <div class="action--description--desc-text layout-to-show hidden-block">
+              {{ 'Roll Up Hints'|t }}
+            </div>
+            <div class="action--description--desc-text layout-to-hide">
+              {{ 'Show Hints'|t }}
+            </div>
+          </div>
+        </div>
+        <div class="hints-layout--hints-list--content content">
+            <div class="content--list">
+              {% for item in map_container.markers %}
+                <div class="content--list--item item">
+                  <div class="item--icon">
+                    <img src="{{ file_url(item.icon) }}"
+                         alt="{{ item.icon.alt }}"/>
+                  </div>
+                  <div class="item--text">
+                    <div class="item--text--label label">
+                      {{ item.title }}
+                    </div>
+                    <div class="item--text--description description">
+                      {{ item.description }}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  <div class="map-wrapper--list-block list-block hide-link hidden map-list-link">
+    <span class="list-block--link-icon"></span>
+    <span class="list-block--link-text">{{ 'Show list'|t }}</span>
+  </div>
+</div>

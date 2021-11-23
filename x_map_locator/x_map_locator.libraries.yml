@@ -1,0 +1,19 @@
+locator:
+  version: 1.x
+  css:
+    base:
+      css/x-map-locator.css: {}
+  js:
+    js/x-map-locator.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - x_map_locator/locator_spider
+
+locator_spider:
+  version: 1.x
+  js:
+    /libraries/overlapping-marker-spiderfier/dist/oms.min.js: {}
+  dependencies:
+    - x_map_locator/x_map_locator

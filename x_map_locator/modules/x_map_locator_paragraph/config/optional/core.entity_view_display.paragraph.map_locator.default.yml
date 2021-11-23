@@ -1,0 +1,21 @@
+uuid: 03c0be7b-c373-4856-ba4b-2b91e5c54f57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map_locator.field_section_bg_color
+    - field.field.paragraph.map_locator.field_section_content_color
+    - field.field.paragraph.map_locator.field_section_id
+    - field.field.paragraph.map_locator.field_section_text
+    - paragraphs.paragraphs_type.map_locator
+id: paragraph.map_locator.default
+targetEntityType: paragraph
+bundle: map_locator
+mode: default
+content: {  }
+hidden:
+  field_section_bg_color: true
+  field_section_content_color: true
+  field_section_id: true
+  field_section_text: true
+  search_api_excerpt: true

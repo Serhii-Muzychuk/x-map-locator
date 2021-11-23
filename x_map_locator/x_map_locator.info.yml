@@ -1,0 +1,9 @@
+name: X Map Locator
+type: module
+description: Search in Google Map X provider
+package: X Map Locator
+core_version_requirement: ^8 || ^9
+dependencies:
+  - drupal:address
+  - drupal:views
+  - x_hubspot:x_hubspot

@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Install Map Locator manager role.
+ */
+
+use Drupal\Core\Config\FileStorage;
+
+function x_map_locator_update_9201(&$sandbox) {
+  $config_path = drupal_get_path('module', 'x_map_locator') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_storage->write('views.view.doctors_list', $source->read('views.view.doctors_list'));
+}

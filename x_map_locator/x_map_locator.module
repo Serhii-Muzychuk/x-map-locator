@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Contains x_map_locator.module.
+ */
+
+/**
+ * Implements hook_theme().
+ *
+ * @TechDoc("Define theme for map elements")
+ */
+function x_map_locator_theme() {
+  return [
+    'x_map_container' => [
+      'variables' => [
+        'map_container' => [],
+      ],
+    ],
+    'map_locator_advanced_search_form' => [
+      'render element' => 'form',
+      'template' => 'map-locator-advanced-search-form',
+    ],
+    'x_map_results' => [
+      'variables' => [
+        'entities' => [],
+        'view_all' => [],
+      ],
+    ],
+    'x_map_info_block' => [
+      'variables' => [
+        'entities' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_library_info_build().
+ *
+ * @TechDoc("Provides dinamic library for Google API.")
+ */
+function x_map_locator_library_info_build() {
+  $x_locator = \Drupal::configFactory()->get('x_map_locator.settings');
+  $google_api_key = $x_locator->get('google_api_key');
+  $google_api_url = $x_locator->get('google_api_url');
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+
+  $google_path = $google_api_url . '?key=' . $google_api_key . '&language=' . $language;
+  $libraries['x_map_locator'] = [
+    'js' => [
+      $google_path => [
+        'external' => TRUE,
+      ],
+    ],
+    'dependencies' => [
+      'core/jquery',
+    ],
+  ];
+
+  return $libraries;
+}

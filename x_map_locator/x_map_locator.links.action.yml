@@ -1,0 +1,11 @@
+entity.x_locator_marker_type.add_form:
+  route_name: entity.x_map_locator_marker_type.add_form
+  title: 'Add Marker Type'
+  appears_on:
+    - entity.x_map_locator_marker_type.collection
+
+entity.x_map_locator_doctor.add_form:
+  route_name: entity.x_map_locator_doctor.add_form
+  title: 'Add Doctor'
+  appears_on:
+    - view.doctors_list.page_1

@@ -1,0 +1,4 @@
+services:
+  x_map_locator.locator_manager:
+    class: Drupal\x_map_locator\LocatorManager
+    arguments: ['@config.factory', '@http_client', '@entity_type.manager', '@serialization.json', '@renderer', '@logger.factory']

@@ -1,0 +1,9 @@
+name: 'X map locator paragraph'
+type: module
+description: 'Provides map locator paragraph'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'X'
+dependencies:
+  - drupal:x_map_locator
+  - drupal:paragraphs

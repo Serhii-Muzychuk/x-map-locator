@@ -1,0 +1,19 @@
+x_map_locator.settings:
+  title: 'Settings'
+  route_name: x_map_locator.setting
+  base_route: x_map_locator.setting
+
+x_map_locator_marker_type.collection:
+  title: 'Marker Types'
+  route_name: entity.x_map_locator_marker_type.collection
+  base_route: x_map_locator.setting
+
+x_map_locator_doctor.list:
+  title: 'Doctor List'
+  route_name: view.doctors_list.page_1
+  base_route: view.doctors_list.page_1
+
+x_map_locator_doctor.import:
+  title: 'Import'
+  route_name: x_map_locator_doctor.import
+  base_route: view.doctors_list.page_1

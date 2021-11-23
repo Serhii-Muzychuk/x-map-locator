@@ -1,0 +1,13 @@
+google_api_url: 'https://maps.googleapis.com/maps/api/js'
+google_geocoder_api_url: 'https://maps.google.com/maps/api/geocode/json'
+google_api_key: AIzaSyAxBMBMDjVncwlIUVN3mITMZqPiJdm-KgM
+zoom: '4'
+def_position:
+  latitude: '37.0902'
+  longitude: '-95.7129'
+button_text: null
+popup_title: 'Find a Damon Doctor Near You'
+number_limit: '0700'
+hubspot_portal_id: '5806864'
+hubspot_form_id: '0bb05b6d-2333-491d-8146-423c7d89a3de'
+hints_hide: TRUE

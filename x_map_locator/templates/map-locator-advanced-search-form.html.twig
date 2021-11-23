@@ -1,0 +1,14 @@
+<div>
+  <div class="advanced-search-title">
+    <span class="search-title">{{- 'Advanced Search'|t -}}</span>
+    <span class="close-advanced-form"></span>
+  </div>
+  {{ form|without('search_by', 'doctor_form', 'location_form', 'submit') }}
+  <div class="advanced-search-by">
+    <span>{{ 'Search by:' |t }}</span>
+    {{ form.search_by }}
+  </div>
+  {{ form.doctor_form }}
+  {{ form.location_form }}
+  {{ form.submit }}
+</div>

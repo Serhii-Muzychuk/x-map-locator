@@ -1,0 +1,14 @@
+services:
+  x_map_locator.x_map_locator_decorator:
+    class: Drupal\x_map_locator_test\MapLocatorDecorator
+    decorates: x_map_locator.locator_manager
+    decoration_priority: 1
+    arguments: [
+      '@x_map_locator.x_map_locator_decorator.inner',
+      '@config.factory',
+      '@http_client',
+      '@entity_type.manager',
+      '@serialization.json',
+      '@renderer',
+      '@logger.factory'
+    ]

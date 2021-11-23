@@ -1,0 +1,9 @@
+name: 'X map locator sales rep'
+type: module
+description: 'Provides map locator sales rep emails'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'X'
+dependencies:
+  - drupal:x_map_locator
+  - drupal:x_sales_rep

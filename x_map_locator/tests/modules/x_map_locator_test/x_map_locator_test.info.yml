@@ -1,0 +1,7 @@
+name: X Map Locator test
+description: X Map Locator test module
+package: X
+type: module
+core_version_requirement: ^8 || ^9
+dependencies:
+  - x_map_locator

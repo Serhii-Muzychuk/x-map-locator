@@ -1,0 +1,9 @@
+x_map_locator_sales_rep.check_zip:
+  path: '/get-sales-by-zip'
+  defaults:
+    _controller: '\Drupal\x_map_locator_sales_rep\Controller\GetSalesByZipController::build'
+    _title: 'Get Sales by ZIP'
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+    _format: 'json'

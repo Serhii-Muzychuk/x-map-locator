@@ -1,0 +1,102 @@
+x_map_locator.x_map_locator_marker_type.*:
+  type: config_entity
+  label: 'Marker Type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    description:
+      type: text
+      label: 'description'
+    icon:
+      type: mapping
+      label: 'icon'
+      mapping:
+        target_id:
+          type: string
+          label: 'Entity ID'
+        uuid:
+          type: uuid
+        alt:
+          type: label
+          label: 'Alternative text'
+        title:
+          type: label
+          label: 'Title'
+        width:
+          type: integer
+          label: 'Width'
+        height:
+          type: integer
+          label: 'Height'
+    internal_icon:
+      type: mapping
+      label: 'Internal icon'
+      mapping:
+        target_id:
+          type: string
+          label: 'Entity ID'
+        uuid:
+          type: uuid
+        alt:
+          type: label
+          label: 'Alternative text'
+        title:
+          type: label
+          label: 'Title'
+        width:
+          type: integer
+          label: 'Width'
+        height:
+          type: integer
+          label: 'Height'
+    weight:
+      type: integer
+      label: 'weight'
+
+x_map_locator.settings:
+  type: config_object
+  mapping:
+    google_api_url:
+      label: 'Google API Url'
+      type: string
+    google_geocoder_api_url:
+      label: 'Google Geocoder API Url'
+      type: string
+    google_api_key:
+      label: 'Google Key API'
+      type: string
+    zoom:
+      label: 'Zoom'
+      type: string
+    def_position:
+      label: 'START COORDINATES FOR GOOGLE MAP.'
+      type: mapping
+      mapping:
+        latitude:
+          label: 'Latitude'
+          type: string
+        longitude:
+          label: 'Longitude'
+          type: string
+    button_text:
+      label: 'Button text'
+      type: label
+    popup_title:
+      label: 'Popup Title'
+      type: label
+    number_limit:
+      label: 'Territory code limit'
+      type: string
+    hubspot_portal_id:
+      label: 'Hubspot Portal Id'
+      type: string
+    hubspot_form_id:
+      label: 'Hubspot Form Id'
+      type: string
+    hints_hide:
+      label: 'Hints block hidden'
+      type: boolean

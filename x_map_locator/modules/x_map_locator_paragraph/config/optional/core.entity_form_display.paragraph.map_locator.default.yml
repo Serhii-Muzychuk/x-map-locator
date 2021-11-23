@@ -1,0 +1,55 @@
+uuid: 423f34df-5eff-4099-9ddc-3507cb6bcc53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.map_locator.field_section_bg_color
+    - field.field.paragraph.map_locator.field_section_content_color
+    - field.field.paragraph.map_locator.field_section_id
+    - field.field.paragraph.map_locator.field_section_text
+    - paragraphs.paragraphs_type.map_locator
+  module:
+    - text
+id: paragraph.map_locator.default
+targetEntityType: paragraph
+bundle: map_locator
+mode: default
+content:
+  field_section_bg_color:
+    type: options_select
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_section_content_color:
+    type: options_select
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_section_id:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_section_text:
+    type: text_textarea
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  inherited:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 1
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

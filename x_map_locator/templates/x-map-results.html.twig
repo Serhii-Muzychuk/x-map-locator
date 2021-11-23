@@ -1,0 +1,43 @@
+{% for key,item in entities %}
+  {% if key < 2 %}
+    {% set sidebar_class = 'left-sidebar-results' %}
+  {% else %}
+    {% set sidebar_class = 'left-sidebar-results invisible' %}
+  {% endif %}
+  <div class="{{ sidebar_class }}">
+    <div class="left-sidebar-results--container container" data-marker-id="{{ item.id }}" data-marker-index="{{ key }}">
+      <div class="container--item-title">{{ item.practice }}</div>
+      <div class="container--item-address row">{{ item.address }}</div>
+      <div class="container--item-address-more row">
+        {% if item.city is not empty %}
+          <div class="container--item-address-more--city city">{{ item.city ~ ',' }}</div>
+        {% endif %}
+        {% if item.area is not empty %}
+          <div class="container--item-address-more--area area">{{ item.area }}</div>
+        {% endif %}
+        {% if item.zip is not empty %}
+          <div class="container--item-address-more--zip zip">{{ item.zip }}</div>
+        {% endif %}
+      </div>
+      <div class="container--item-name hidden">{{ item.name }}</div>
+      <div class="container--item-email hidden">{{ item.email }}</div>
+      <div class="container--item-phone row">
+        <a href="tel:{{ item.phone }}">{{ item.phone }}</a>
+      </div>
+      <div class="container--item-site row">
+        <a target="_blank" href="{{ item.site|lower }}">{{ item.site|lower }}</a>
+      </div>
+    </div>
+    {% if item.schedule_appointment %}
+      <div class="left-sidebar-results--right-container right-container hs-form-activated-btn" data-location-id="{{ item.id }}">
+        <div class="right-container--schapp-icon"></div>
+        <div class="right-container--schapp-text">{{ 'Schedule Appointment'|t }}</div>
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}
+<div class="mobile-toggle--view-all">
+  <div class="mobile-toggle--view-all--btn locator-btn invisible">
+    {{ 'View all (' ~ view_all ~ ')' |t }}
+  </div>
+</div>

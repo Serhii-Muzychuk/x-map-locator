@@ -1,0 +1,10 @@
+uuid: 266953a8-d636-465e-a396-3ab53ecd696e
+langcode: en
+status: true
+dependencies: {  }
+id: map_locator
+label: 'Map locator'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

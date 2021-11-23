@@ -1,0 +1,85 @@
+x_map_locator.admin_structure:
+  path: 'admin/x/x-map-locator'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'X Map Locator Options'
+  requirements:
+    _permission: 'access x map locator'
+  options:
+    _admin_route: TRUE
+
+entity.x_map_locator_marker_type.collection:
+  path: 'admin/x/x-map-locator/setting/marker-types'
+  defaults:
+    _entity_list: 'x_map_locator_marker_type'
+    _title: 'Marker Type List'
+  requirements:
+    _permission: 'administer x map locator'
+  options:
+    _admin_route: TRUE
+
+entity.x_map_locator_marker_type.add_form:
+  path: 'admin/x/x-map-locator/setting/marker-types/add'
+  defaults:
+    _entity_form: 'x_map_locator_marker_type.add'
+    _title: 'Add Marker Type'
+  requirements:
+    _permission: 'administer x map locator'
+
+entity.x_map_locator_marker_type.edit_form:
+  path: 'admin/x/x-map-locator/setting/marker-types/{x_map_locator_marker_type}/edit'
+  defaults:
+    _entity_form: 'x_map_locator_marker_type.edit'
+    _title: 'Edit Marker Type'
+  requirements:
+    _permission: 'administer x map locator'
+
+entity.x_map_locator_marker_type.delete_form:
+  path: 'admin/x/x-map-locator/setting/marker-types/{x_map_locator_marker_type}/delete'
+  defaults:
+    _entity_form: 'x_map_locator_marker_type.delete'
+    _title: 'Delete Marker Type'
+  requirements:
+    _permission: 'administer x map locator'
+
+x_map_locator.setting:
+  path: 'admin/x/x-map-locator/setting'
+  defaults:
+    _form: '\Drupal\x_map_locator\Form\xMapLocatorSettingForm'
+    _title: 'X Map Locator Settings'
+  requirements:
+    _permission: 'administer x map locator'
+  options:
+    _admin_route: TRUE
+
+entity.x_map_locator_doctor.add_form:
+  path: 'admin/x/x-map-locator/doctor/add'
+  defaults:
+    _title: 'Add Doctor'
+    _entity_form: x_map_locator_doctor.add
+  requirements:
+    _entity_create_access: 'x_map_locator_doctor'
+
+entity.x_map_locator_doctor.edit_form:
+  path: 'admin/x/x-map-locator/doctor/{x_map_locator_doctor}/edit'
+  defaults:
+    _entity_form: x_map_locator_doctor.edit
+    _title: 'Edit Doctor'
+  requirements:
+    _entity_access: 'x_map_locator_doctor.edit'
+
+entity.x_map_locator_doctor.delete_form:
+  path: 'admin/x/x-map-locator/doctor/{x_map_locator_doctor}/delete'
+  defaults:
+    _entity_form: x_map_locator_doctor.delete
+    _title: 'Delete Doctor'
+  requirements:
+    _entity_access: 'x_map_locator_doctor.delete'
+
+x_map_locator_doctor.import:
+  path: 'admin/x/x-map-locator/doctor/import'
+  defaults:
+    _title: 'Import Doctors'
+    _form: '\Drupal\x_map_locator\Form\XMapLocatorDoctorImportForm'
+  requirements:
+    _permission: 'import x_map_locator_doctor'
